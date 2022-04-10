@@ -19,7 +19,6 @@ const Counter = () => {
     dispatch(addStep(step));
   };
 
-  console.log({step});
   return (
     <View>
       <Text style={styles.textStyle}>{count}</Text>
