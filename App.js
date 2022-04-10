@@ -10,14 +10,17 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Counter from './src/components/Counter';
 import {Provider as ReduxProvider} from 'react-redux';
-import {store} from './src/redux/store';
+import {persistor, store} from './src/redux/store';
+import {PersistGate} from 'redux-persist/integration/react';
 
 const App = () => {
   return (
     <ReduxProvider store={store}>
-      <View style={styles.container}>
-        <Counter />
-      </View>
+      <PersistGate loading={null} persistor={persistor}>
+        <View style={styles.container}>
+          <Counter />
+        </View>
+      </PersistGate>
     </ReduxProvider>
   );
 };

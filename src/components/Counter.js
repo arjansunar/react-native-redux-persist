@@ -5,7 +5,7 @@ import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const {count} = useSelector(state => state.counterReducer);
+  const {count} = useSelector(state => state.counter);
 
   const [step, setStep] = useState(1);
   const incrementVal = () => {
